@@ -25,7 +25,6 @@ class TwitchApiExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
         $clientConfig = $config['client'];
-        var_dump($clientConfig);
         $container->setParameter('twitch_api.client.id', $clientConfig['id']);
         $container->setParameter('twitch_api.client.secret', $clientConfig['secret']);
     }
