@@ -14,7 +14,7 @@
         "name" : "Rene Ramirez",
         "email" : "rene.szabo@gmail.com"
     }],
-    "homepage":    "http://github.com/hwi/HWIOAuthBundle",
+    "homepage":    "https://github.com/reneszabo/twitch-api-bundle",
     "autoload": {
         "psr-4": {
             "Twitch\\ApiBundle\\": ""
