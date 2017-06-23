@@ -33,9 +33,6 @@
         "symfony/symfony": "3.3.*"
     },
     "config": {
-        "sort-packages": true
-    },
-    "extra": {
-        "branch-alias": null
+        "bin-dir": "bin"
     }
 }
