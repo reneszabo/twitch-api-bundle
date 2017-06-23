@@ -1,0 +1,41 @@
+{
+    "name": "reneszabo/twitch-api-bundle",
+    "description" : "Implements twitch api in a symfony bundle",
+    "type": "symfony-bundle",
+    "license": "GNU GENERAL PUBLIC LICENSE",
+    "keywords" : [
+        "Symfony",
+        "Twitch",
+        "PHP",
+        "Twitch API",
+        "API"
+    ],
+    "authors" : [{
+        "name" : "Rene Ramirez",
+        "email" : "rene.szabo@gmail.com"
+    }],
+    "homepage":    "http://github.com/hwi/HWIOAuthBundle",
+    "autoload": {
+        "psr-4": {
+            "Twitch\\ApiBundle\\": ""
+        },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Twitch\\ApiBundle\\Tests\\": "Tests/"
+        }
+    },
+    "require": {
+        "php": "^5.5.9|^7.0",
+        "symfony/symfony": "3.3.*"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": null
+    }
+}

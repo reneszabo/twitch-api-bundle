@@ -1,0 +1,5 @@
+twitch_api_controller:
+    resource: '@TwitchApiBundle/Controller/'
+    type:     annotation
+    prefix:   /twitch/api
+

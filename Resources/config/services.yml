@@ -1,0 +1,4 @@
+services:
+#    twitch_api.example:
+#        class: Twitch\ApiBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
