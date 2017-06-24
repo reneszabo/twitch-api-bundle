@@ -1,8 +1,8 @@
-#Twitch Api Bundle
+# Twitch Api Bundle
 
-##Configuration
+## Configuration
 
-####parameters.yml
+#### parameters.yml
 
 Add parameters to final and dist yml
 
@@ -22,7 +22,7 @@ parameters:
     twitch_api_client_secret: YOUR_TWITCH_CLIENT_SECRET
 ```
 
-####config.yml
+#### config.yml
 
 Link you parameters with the config file; 
 Bundle will use client id and secret for api calls. 
@@ -34,7 +34,7 @@ twitch_api:
         secret: '%twitch_api_client_secret%'
 ```
 
-####routing.yml (optional)
+#### routing.yml (optional)
 
 This is optional.
 Will expose api calls, and documentations.
