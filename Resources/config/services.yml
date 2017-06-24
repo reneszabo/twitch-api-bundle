@@ -1,4 +1,7 @@
 services:
-#    twitch_api.example:
-#        class: Twitch\ApiBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    twitch_api.client:
+        class: Twitch\ApiBundle\Service\TwitchClientService
+        arguments:
+            - "@monolog.logger"
+            - "%twitch_api.client.id%"
+            - "%twitch_api.client.secret%"
