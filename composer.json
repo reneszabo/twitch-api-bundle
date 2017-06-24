@@ -30,7 +30,8 @@
     },
     "require": {
         "php": "^5.5.9|^7.0",
-        "symfony/symfony": "3.3.*"
+        "symfony/symfony": "3.3.*",
+        "guzzlehttp/guzzle": "^6.3"
     },
     "config": {
         "bin-dir": "bin"
