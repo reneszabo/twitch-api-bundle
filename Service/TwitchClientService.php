@@ -1,18 +1,20 @@
 <?php
+
 namespace Twitch\ApiBundle\Service;
 
 use Psr\Log\LoggerInterface;
 use GuzzleHttp\Client;
+
 class TwitchClientService
 {
     const TWITCH_API_HEADER_VERSION = 'application/vnd.twitchtv.v5+json';
-    const TWITCH_API_ROOT_URL = 'https://api.twitch.tv/kraken/';
+    const TWITCH_API_ROOT_URL = 'https://api.twitch.tv';
 
     /* @var LoggerInterface */
     private $logger;
 
     /* @var Client */
-    private $guzzel;
+    private $client;
 
     /**
      * Twitch Client Id
@@ -26,18 +28,39 @@ class TwitchClientService
      */
     private $twitchApiClientSecret;
 
-    public function __construct(LoggerInterface $logger, $twitchApiClientId, $twitchApiClientSecret)
+    /**
+     * base headers
+     */
+    private $headers;
+
+    /**
+     * TwitchClientService constructor.
+     * @param LoggerInterface $logger
+     * @param $twitchApiClientId
+     * @param $twitchApiClientSecret
+     */
+    public function __construct(LoggerInterface $logger, $twitchApiClientId = null, $twitchApiClientSecret = null)
     {
         $this->logger = $logger;
-        $this->guzzel = new Client([
-            'base_uri' => self::TWITCH_API_ROOT_URL
-        ]);
         $this->twitchApiClientId = $twitchApiClientId;
         $this->twitchApiClientSecret = $twitchApiClientSecret;
+        $this->headers = $twitchApiClientId ? [
+            'Client-ID' => $twitchApiClientId,
+            'Accept' => self::TWITCH_API_HEADER_VERSION
+        ] : [
+            'Accept' => self::TWITCH_API_HEADER_VERSION
+        ];
+        $this->client = new Client([
+            'base_uri' => self::TWITCH_API_ROOT_URL,
+            'headers' => $this->headers
+        ]);
     }
 
-    public function getHello(){
-        return 'hi';
+    public function getRequest($url, $headers = [], $type = 'GET')
+    {
+        $response = $this->client->request($type, $url, ['headers' => $headers]);
+        return $response->getBody()->getContents();
     }
+
 
 }
